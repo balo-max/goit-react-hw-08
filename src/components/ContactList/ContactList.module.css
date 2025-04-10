@@ -1,0 +1,26 @@
+.listWrapper {
+  max-width: 1212px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 350px;
+  padding: 20px;
+
+  border: 2px solid grey;
+  border-radius: 10px;
+}

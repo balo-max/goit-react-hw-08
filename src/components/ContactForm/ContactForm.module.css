@@ -1,0 +1,34 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  border: 2px solid white;
+  border-radius: 8px;
+
+  width: 300px;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-align: start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formInput {
+  height: 20px;
+}
+
+.formBtn {
+  width: 120px;
+  padding: 8px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.formBtn:hover {
+  background-color: #9a9a9a;
+}
+.errorMessage {
+  color: #ff0000;
+}

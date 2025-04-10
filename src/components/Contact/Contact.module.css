@@ -1,0 +1,28 @@
+.contactText {
+  text-align: left;
+  font-size: 18px;
+}
+.contactBtn {
+  display: block;
+  height: 30px;
+
+  border-radius: 5px;
+}
+
+.contactBtn:hover {
+  background-color: #9a9a9a;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+}

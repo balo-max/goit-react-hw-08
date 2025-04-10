@@ -1,0 +1,18 @@
+.authNavList {
+  display: flex;
+  gap: 15px;
+  margin-right: 10px;
+}
+
+.navLink {
+  font-size: 18px;
+  padding: 8px;
+}
+.navLink:visited {
+  color: inherit;
+}
+
+.active {
+  background-color: rgb(108, 169, 129, 0.5);
+  border-radius: 8px;
+}
