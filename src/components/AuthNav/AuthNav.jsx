@@ -13,4 +13,4 @@ export default function AuthNav() {
             <NavLink to='/registration' className={buildLinkClass}>Registration</NavLink>
         </nav>
     )
-}
+}   

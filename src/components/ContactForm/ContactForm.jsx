@@ -6,7 +6,6 @@ import * as yup from 'yup';
 
 import css from './ContactForm.module.css'
 
-
 const initialValues = {
     name: "",
     number: ""
@@ -15,11 +14,11 @@ const initialValues = {
 const validationSchema = yup.object().shape({
     name: yup.string().min(2, "Too Short!").max(30, "Too Long!").required("Required"),
     number: yup.string()
-        .matches(/^\d{3}-\d{2}-\d{2}$/, "Number format 111-11-11")
+        .matches(/^[0-9()\-+/\s]+$/, 'Only numbers phone')
         .required("Required")
 });
 
-export default function ContactForm() {
+export default function ContactForm({onCloseModal}) {
 
     const dispatch = useDispatch();
 
@@ -33,6 +32,7 @@ export default function ContactForm() {
             name: event.name,
             number: event.number,
         }))
+        onCloseModal();
         actions.resetForm();
     };
     
@@ -41,10 +41,10 @@ export default function ContactForm() {
             <Form className={css.contactForm}>
                 <label htmlFor={formId.nameId}>Name</label>
                 <Field className={css.formInput} type="text" name="name" id={formId.nameId} />
-                <ErrorMessage className={css.errorMessage} name="name" component="span"/>
+                <ErrorMessage className={css.errorMessage} name="name" component="span" />
                 <label htmlFor={formId.numberId}>Number</label>
                 <Field className={css.formInput} type="text" name="number" id={formId.numberId} />
-                <ErrorMessage className={css.errorMessage} name="number" component="span"/>
+                <ErrorMessage className={css.errorMessage} name="number" component="span" />
                 
                 <button className={css.formBtn} type="submit">Add contact</button>
             </Form>

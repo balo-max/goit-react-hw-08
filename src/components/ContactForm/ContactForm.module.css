@@ -12,9 +12,11 @@
   text-align: start;
   margin-left: auto;
   margin-right: auto;
+  background: linear-gradient(to bottom, #1f1f1f 0%, #0f2922 100%);
 }
 
 .formInput {
+  padding-left: 5px;
   height: 20px;
 }
 
@@ -25,9 +27,10 @@
   margin-right: auto;
   margin-top: 10px;
   border-radius: 5px;
+  background: rgb(108, 169, 129, 0.1);
 }
 .formBtn:hover {
-  background-color: #9a9a9a;
+  background: rgb(108, 169, 129, 0.3);
 }
 .errorMessage {
   color: #ff0000;

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useId } from 'react';
 import * as yup from 'yup';
 import css from './RegistrationForm.module.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 const validationSchema = yup.object({
     name: yup.string()
@@ -31,13 +32,21 @@ const initialValues = {
 export default function RegistrationForm() {
     const dispatch = useDispatch();
 
-    const handleSumit = (event, actions) => {
+    const handleSumit = (values, actions) => {
         dispatch(registrationUser({
-            name: event.name,
-            email: event.email,
-            password: event.password,
-        }));
-        actions.resetForm();
+            name: values.name,
+            email: values.email,
+            password: values.password,
+        })).unwrap().then(() => {
+            toast.success('Registration successful.', {
+                duration: 2000,
+            })
+            actions.resetForm();
+        }).catch(() => {
+            toast.error('Registration failed. Please try again.', {
+                duration: 2000,
+            })
+        });
     };
 
     const formId = {
@@ -49,26 +58,32 @@ export default function RegistrationForm() {
 
 
     return (
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSumit}>
-            <Form className={css.regForm}>
-                <label htmlFor={formId.name}>Name</label>
-                <Field type='text' name='name' id={formId.name} />
-                <ErrorMessage name='name' />
+        <>
+            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSumit}>
+                <Form className={css.regForm}>
+                    <label className={css.regLabel} htmlFor={formId.name}>Name</label>
+                    <Field className={css.regInput} type='text' name='name' id={formId.name} />
+                    <ErrorMessage className={css.error} name='name' component="span" />
                 
-                <label htmlFor={formId.email}>Email</label>
-                <Field type='email' name='email' id={formId.email} />
-                <ErrorMessage name='email'/>
+                    <label className={css.regLabel} htmlFor={formId.email}>Email</label>
+                    <Field className={css.regInput} type='email' name='email' id={formId.email} />
+                    <ErrorMessage className={css.error} name='email' component="span" />
 
-                <label htmlFor={formId.password}>Password</label>
-                <Field type='password' name='password' autoComplete='newPassword' id={formId.password} />
-                <ErrorMessage name='password'/>
+                    <label className={css.regLabel} htmlFor={formId.password}>Password</label>
+                    <Field className={css.regInput} type='password' name='password' autoComplete='newPassword' id={formId.password} />
+                    <ErrorMessage className={css.error} name='password' component="span" />
 
-                <label htmlFor={formId.confirmPassword}>Confirm password</label>
-                <Field type='password' name='confirmPassword' autoComplete='confirmPassword' id={formId.confirmPassword} />
-                <ErrorMessage name='confirmPassword'/>
+                    <label className={css.regLabel} htmlFor={formId.confirmPassword}>Confirm password</label>
+                    <Field className={css.regInput} type='password' name='confirmPassword' autoComplete='confirmPassword' id={formId.confirmPassword} />
+                    <ErrorMessage className={css.error} name='confirmPassword' component="span" />
 
-                <button type='submit'>Registration</button>
-            </Form>
-        </Formik>
-    )
+                    <button className={css.regBtn} type='submit'>Registration</button>
+                </Form>
+            </Formik>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
+        </>
+    );
 };

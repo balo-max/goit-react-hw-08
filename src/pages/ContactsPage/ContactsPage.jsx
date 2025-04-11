@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
-import SearchBox from "../../components/SearchBox/SearchBox";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
+import ControlPanel from "../../components/ControlPanel/ControlPanel";
+import css from './ContactsPage.module.css';
 
 export default function ContactsPage() {
     const dispatch = useDispatch();
@@ -15,10 +15,9 @@ export default function ContactsPage() {
     }, [dispatch]);
 
     return (
-        <>
-            <ContactForm />
-            <SearchBox />
+        <div className={css.wrapper}>
+            <ControlPanel/>
             {contacts.length !== 0 && <ContactList />}
-        </>
+        </div>
     )
 }

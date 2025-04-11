@@ -1,9 +1,10 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/auth/operations';
+import { useId } from 'react';
 import * as yup from 'yup';
 import css from './LoginForm.module.css';
-import { useId } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const validationSchema = yup.object({
     email: yup.string()
@@ -26,7 +27,16 @@ export default function LoginForm() {
         dispatch(loginUser({
             email: event.email,
             password: event.password,
-        }));
+        })).unwrap().then((data) => {
+            toast.success(`Hello, ${data.user.name}`, {
+                duration: 2000,
+            }) 
+            
+        }).catch(() => {
+            toast.error('Incorrect email or password.', {
+                duration: 2000,
+            }) 
+        });
         actions.resetForm();
     };
 
@@ -36,18 +46,24 @@ export default function LoginForm() {
     }
 
     return (
-        <Formik validationSchema={validationSchema} initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form className={css.loginForm}>
-                <label htmlFor={formId.email}>E-mail</label>
-                <Field type='email' name='email' autoComplete='email' id={formId.email} />
-                <ErrorMessage name='email'/>
+        <>
+            <Formik validationSchema={validationSchema} initialValues={initialValues} onSubmit={handleSubmit}>
+                <Form className={css.loginForm}>
+                    <label className={css.loginLabel} htmlFor={formId.email}>E-mail</label>
+                    <Field className={css.loginInput} type='email' name='email' autoComplete='email' id={formId.email} />
+                    <ErrorMessage className={css.error} name='email' component="span" />
                 
-                <label htmlFor={formId.password}>Password</label>
-                <Field type='password' name='password' autoComplete='current-password' id={formId.password} />
-                <ErrorMessage name='password'/>
+                    <label className={css.loginLabel} htmlFor={formId.password}>Password</label>
+                    <Field className={css.loginInput} type='password' name='password' autoComplete='current-password' id={formId.password} />
+                    <ErrorMessage className={css.error} name='password' component="span" />
                 
-                <button type='submit'>Login</button>
-            </Form>
-        </Formik>
+                    <button className={css.loginBtn} type='submit'>Login</button>
+                </Form>
+            </Formik>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
+        </>
     )
 };
