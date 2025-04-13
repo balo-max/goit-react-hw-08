@@ -1,23 +1,8 @@
-.errorWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.errorText {
-  font-size: 25px;
-  font-weight: 600;
-  color: #ff0000;
-}
-
-.errorTextLinkBack {
+.error {
+  color: red;
   font-size: 22px;
-  color: #16a216;
 }
 
-.errorLink {
-  text-decoration: underline;
-  font-size: 25px;
+.errorSpan {
+  color: #6ca981;
 }

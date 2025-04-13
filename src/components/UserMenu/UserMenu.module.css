@@ -23,10 +23,11 @@
 .link {
   font-size: 18px;
   padding: 8px;
+  color: #ffffff;
 }
 
 .link:visited {
-  color: inherit;
+  color: #ffffff;
 }
 
 .active {

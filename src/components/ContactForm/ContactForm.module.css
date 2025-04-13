@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 3px;
 
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 8px;
 
   width: 300px;
@@ -34,4 +34,12 @@
 }
 .errorMessage {
   color: #ff0000;
+}
+
+.editBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }

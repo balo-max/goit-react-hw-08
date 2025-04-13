@@ -49,11 +49,11 @@ export default function LoginForm() {
         <>
             <Formik validationSchema={validationSchema} initialValues={initialValues} onSubmit={handleSubmit}>
                 <Form className={css.loginForm}>
-                    <label className={css.loginLabel} htmlFor={formId.email}>E-mail</label>
+                    <label className={css.loginLabel} htmlFor={formId.email}>E-mail<span className={css.spanRequired}>*</span></label>
                     <Field className={css.loginInput} type='email' name='email' autoComplete='email' id={formId.email} />
                     <ErrorMessage className={css.error} name='email' component="span" />
                 
-                    <label className={css.loginLabel} htmlFor={formId.password}>Password</label>
+                    <label className={css.loginLabel} htmlFor={formId.password}>Password<span className={css.spanRequired}>*</span></label>
                     <Field className={css.loginInput} type='password' name='password' autoComplete='current-password' id={formId.password} />
                     <ErrorMessage className={css.error} name='password' component="span" />
                 

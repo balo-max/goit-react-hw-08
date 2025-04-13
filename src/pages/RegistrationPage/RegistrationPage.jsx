@@ -7,7 +7,7 @@ export default function RegistrationPage() {
     return (
         <div className={css.regFormWrapper}>
             <RegistrationForm />
-            <p>Already have an account? <NavLink className={css.link} to='/login'>Log in.</NavLink></p>
+            <p>Already have an account? <NavLink className={css.link} to='/login'>Login.</NavLink></p>
         </div>
     )
 }

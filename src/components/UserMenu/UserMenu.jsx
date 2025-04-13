@@ -23,7 +23,7 @@ export default function UserMenu() {
             <NavLink className={buildLinkClass} to='/contacts'>Contacts</NavLink>
             <div className={css.userWrapper}>
                 <p className={css.userText}>Hello, <span className={css.userSpan}>{user.name}</span></p>
-                <button className={css.userBtn} onClick={handleLogout}>Log Out</button>
+                <button className={css.userBtn} onClick={handleLogout}>Logout</button>
             </div>
             <Toaster
                 position="top-center"

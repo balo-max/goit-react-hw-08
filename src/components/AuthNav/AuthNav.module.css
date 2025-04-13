@@ -7,9 +7,10 @@
 .navLink {
   font-size: 18px;
   padding: 8px;
+  color: #ffffff;
 }
 .navLink:visited {
-  color: inherit;
+  color: #ffffff;
 }
 
 .active {

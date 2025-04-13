@@ -29,23 +29,46 @@
   font-size: 25px;
   text-shadow: 3px 3px 3px #6ca981;
   text-shadow: 2px 2px 2px #000000;
+  margin-bottom: 35px;
+}
+
+.textReg {
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+  margin-bottom: 10px;
 }
 
 .linkWrapper {
-  margin-top: 25px;
   padding: 15px;
   background-color: rgb(255, 255, 255, 0.1);
 }
 
 .linkText {
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .link {
+  font-weight: 500;
   text-decoration: underline;
   color: #6ca981;
 }
 
 .link:hover {
   color: #86d7a2;
+}
+
+.linkStart {
+  display: inline-block;
+  padding: 8px 55px;
+  background-color: rgb(108, 169, 129, 0.9);
+  border-radius: 8px;
+  font-size: 22px;
+  color: #ffffff;
+}
+.linkStart:hover {
+  background-color: rgb(134, 215, 162, 0.9);
+}
+.linkStart:visited {
+  color: #ffffff;
 }

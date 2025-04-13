@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  width: 350px;
+  padding: 15px;
+
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+
+  background: linear-gradient(to bottom, #1f1f1f 0%, #0f2922 100%);
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.text {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 17px;
+  width: 90px;
+  border-radius: 5px;
+  background: rgb(108, 169, 129, 0.1);
+}
+
+.btn:hover {
+  background: rgb(108, 169, 129, 0.3);
+}
+
+.span {
+  color: #6ca981;
+}

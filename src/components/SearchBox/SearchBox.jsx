@@ -15,7 +15,7 @@ export default function SearchBox() {
 
     return (
         <div className={css.searchWrapper}>
-            <label className={css.searchLabel} htmlFor={searchID}>Find contacts by name or number</label>
+            <label className={css.searchLabel} htmlFor={searchID}>Search by name or number:</label>
             <input className={css.searchInput} value={value} type="text" name="username" id={searchID} onChange={(e) => handleSearch(e.target.value)} />
         </div>
     )

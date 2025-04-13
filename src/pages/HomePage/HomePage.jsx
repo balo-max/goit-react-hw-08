@@ -9,11 +9,13 @@ export default function HomePage() {
     return (
         <div className={css.homeWrapper}>
             <div className={css.secondWrapper}>
-                <h1 className={css.title}>Welcome to the web application "Your Contacts Book".</h1>
-                <p className={css.titleText}>With us, your contacts will be safe and organized. Create, edit, sort!</p>
-                {!isLoggedIn && <div className={css.linkWrapper}>
-                    <p className={css.linkText}>Ready to get started? <NavLink className={css.link} to='/login'>Login</NavLink> if you don't have an account <NavLink className={css.link} to='/registration'>Register</NavLink>.</p>
-                </div>}
+                <h1 className={css.title}>Welcome to 'Your Contacts Book'.</h1>
+                <p className={css.titleText}>With us your contacts will be safe and organized. Create, edit, use!</p>
+                {!isLoggedIn ? <div className={css.linkWrapper}>
+                    <p className={css.textReg}>Ready to get started? </p>
+                    <p className={css.linkText}><NavLink className={css.link} to='/registration'>Register</NavLink> to create an account. <br /> Already registered? <NavLink className={css.link} to='/login'>Login</NavLink>.</p>
+                </div> : <NavLink className={css.linkStart} to='/contacts'>Start</NavLink>}
+                
             </div>
         </div>
     )

@@ -1,18 +1,3 @@
-.contactText {
-  text-align: left;
-  font-size: 18px;
-}
-.contactBtn {
-  display: block;
-  height: 30px;
-
-  border-radius: 5px;
-}
-
-.contactBtn:hover {
-  background-color: #9a9a9a;
-}
-
 .iconWrapper {
   display: flex;
   flex-direction: column;
@@ -24,5 +9,40 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  gap: 7px;
+  gap: 15px;
+}
+
+.textWrapper {
+  width: 200px;
+}
+
+.btnWrapper {
+  padding-left: 10px;
+  border-left: 1px solid rgb(128, 128, 128, 0.4);
+}
+
+.contactText {
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px solid rgb(128, 128, 128, 0.4);
+}
+.contactBtn {
+  display: block;
+  height: 30px;
+
+  border: unset;
+  background: inherit;
+  transition: ease transform 250ms;
+}
+.iconDelete {
+  font-size: 23px;
+  color: #ff0000;
+}
+
+.iconUpdt {
+  font-size: 18px;
+  color: #12ac12;
+}
+.contactBtn:hover {
+  transform: scale(1.2);
 }
