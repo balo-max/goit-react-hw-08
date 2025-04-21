@@ -1,11 +1,16 @@
+/* .wrapper {
+  padding: 15px;
+} */
+
 .homeWrapper {
-  max-width: 1200px;
+  max-width: 100%;
   height: 750px;
 
   margin-left: auto;
   margin-right: auto;
 
-  background-image: url(../../images/backgraund-image.jpg);
+  background-image: url(../../images/office-desk-with-laptop-notepad-cup-coffee.jpg);
+  background-size: cover;
   border-radius: 15px;
 }
 
@@ -61,13 +66,13 @@
 .linkStart {
   display: inline-block;
   padding: 8px 55px;
-  background-color: rgb(108, 169, 129, 0.9);
+  background-color: rgb(108, 169, 129, 0.5);
   border-radius: 8px;
   font-size: 22px;
   color: #ffffff;
 }
 .linkStart:hover {
-  background-color: rgb(134, 215, 162, 0.9);
+  background-color: rgba(125, 255, 170, 0.5);
 }
 .linkStart:visited {
   color: #ffffff;
