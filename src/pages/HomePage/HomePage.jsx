@@ -7,7 +7,6 @@ export default function HomePage() {
     const isLoggedIn = useSelector(selectIsLoggedIn);
 
     return (
-        <div className={css.wrapper}>
             <div className={css.homeWrapper}>
                 <div className={css.secondWrapper}>
                     <h1 className={css.title}>Welcome to 'Your Contacts Book'.</h1>
@@ -18,7 +17,6 @@ export default function HomePage() {
                     </div> : <NavLink className={css.linkStart} to='/contacts'>Start</NavLink>}
             
                 </div>
-        </div>
         </div>
     )
 }

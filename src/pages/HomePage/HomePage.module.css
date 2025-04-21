@@ -1,7 +1,3 @@
-/* .wrapper {
-  padding: 15px;
-} */
-
 .homeWrapper {
   max-width: 100%;
   height: 750px;
@@ -9,7 +5,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  background-image: url(../../images/office-desk-with-laptop-notepad-cup-coffee.jpg);
+  background-image: url(../../images/backgraund-image.jpg);
   background-size: cover;
   border-radius: 15px;
 }
